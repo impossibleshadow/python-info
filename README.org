@@ -1,8 +1,17 @@
 
-* Howto build python's documentation in texinfo format
-  1. Install the latest sphinx with python2 .
-  2. Download the desired python distribution.
-  3. Build the info file as follows.
+* [[https://docs.python.org/][Python Doc]]s in [[https://www.gnu.org/software/texinfo/][texinfo]] format
+(useful if you want to [[https://www.emacswiki.org/emacs/PythonProgrammingInEmacs#toc42][read Python's documentation inside Emacs using the `Info` mode]])
+** Installation
+Download the /.gz/ file corresponding to your version and run these commands in a terminal:
+
+#+begin_src sh
+sudo cp python-x.y.z.info.gz /usr/share/info
+sudo install-info --info-dir=/usr/share/info python-x.y.z.info.gz
+#+end_src
+** If you want to build it yourself, just follow these steps
+  1. Install the latest sphinx
+  2. Download the desired python distribution
+  3. Build the info file as follows
 #+begin_src sh
   cd Python-x.y.z/Doc
   sphinx-build -b texinfo -d build/doctrees . build/texinfo
